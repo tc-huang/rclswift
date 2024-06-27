@@ -10,12 +10,18 @@ let package = Package(
         .library(
             name: "rclswift",
             targets: ["rclswift"]),
+        .executable(
+            name: "rclswiftExample",
+            targets: ["rclswiftExample"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "rclswift"),
+        .executableTarget(
+            name: "rclswiftExample",
+            dependencies: ["rclswift"]),
         .testTarget(
             name: "rclswiftTests",
             dependencies: ["rclswift"]),
